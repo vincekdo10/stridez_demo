@@ -1,0 +1,101 @@
+version: 2
+
+semantic_models:
+  - name: roas
+    model: ref('fct_roas')
+    description: "Return on Ad Spend metrics by campaign, platform, region, and date."
+
+    entities:
+      - name: campaign_id
+        type: primary
+
+    dimensions:
+      - name: platform
+        type: categorical
+      - name: region
+        type: categorical
+      - name: date
+        type: time
+
+    measures:
+      - name: total_spend
+        expression: sum(total_spend)
+        type: metric
+
+      - name: total_revenue
+        expression: sum(total_revenue)
+        type: metric
+
+      - name: roas
+        expression: sum(total_revenue) / sum(total_spend)
+        type: metric
+
+  - name: sales
+    model: ref('fct_sales')
+    description: "Sales performance by product, region, and campaign."
+
+    entities:
+      - name: order_id
+        type: primary
+
+    dimensions:
+      - name: product_name
+        type: categorical
+      - name: region
+        type: categorical
+      - name: order_date
+        type: time
+
+    measures:
+      - name: total_revenue
+        expression: sum(total_revenue)
+        type: metric
+
+      - name: total_quantity
+        expression: sum(total_quantity)
+        type: metric
+
+      - name: order_count
+        expression: sum(order_count)
+        type: metric
+
+  - name: ad_performance
+    model: ref('fct_ad_performance')
+    description: "Ad performance by platform, campaign, region, and date."
+
+    entities:
+      - name: campaign_id
+        type: primary
+
+    dimensions:
+      - name: platform
+        type: categorical
+      - name: region
+        type: categorical
+      - name: campaign_date
+        type: time
+
+    measures:
+      - name: total_spend
+        expression: sum(total_spend)
+        type: metric
+
+      - name: total_impressions
+        expression: sum(total_impressions)
+        type: metric
+
+      - name: total_clicks
+        expression: sum(total_clicks)
+        type: metric
+
+      - name: ctr
+        expression: sum(total_clicks) / sum(total_impressions)
+        type: metric
+
+      - name: cpc
+        expression: sum(total_spend) / sum(total_clicks)
+        type: metric
+
+      - name: cpm
+        expression: sum(total_spend) / sum(total_impressions) * 1000
+        type: metric
