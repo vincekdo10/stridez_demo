@@ -2,7 +2,8 @@ version: 2
 
 models:
   - name: fct_sales
-    description: "Aggregated sales metrics by campaign, region, and date."
+    description: "Aggregated sales metrics by campaign, region, and date."    
+    tags: ["sales", "ecommerce", "orders", "dbt-powered", "streamlit"]
     columns:
       - name: campaign_id
         description: "Ad campaign associated with the sale."
