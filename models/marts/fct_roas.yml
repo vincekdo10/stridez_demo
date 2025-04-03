@@ -1,0 +1,21 @@
+version: 2
+
+models:
+  - name: fct_roas
+    description: "Join of sales and ad spend to calculate Return on Ad Spend (ROAS)."
+    columns:
+      - name: campaign_id
+        description: "The ad campaign ID."
+        tests: [not_null]
+      - name: platform
+        description: "Advertising platform (Google, Meta, TikTok)."
+      - name: region
+        description: "Target region for the campaign."
+      - name: date
+        description: "The date the campaign was active."
+      - name: total_spend
+        description: "Total ad spend in USD."
+      - name: total_revenue
+        description: "Total sales revenue attributed to the campaign."
+      - name: roas
+        description: "Return on Ad Spend = revenue / spend."

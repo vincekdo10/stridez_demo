@@ -1,0 +1,23 @@
+# dbt build artifacts
+target/
+dbt_packages/
+logs/
+__pycache__/
+*.pyc
+
+# Mac OS
+.DS_Store
+
+# Python virtual environments (optional)
+venv/
+.env/
+
+# VS Code settings (optional)
+.vscode/
+
+# Secrets (if any)
+.env
+.env.*
+
+# dbt Cloud IDE (optional)
+.idea/

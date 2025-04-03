@@ -2,20 +2,16 @@ name: 'dbt_stridez'
 version: '1.0'
 config-version: 2
 
-profile: 'stridez'  # 👈 Matches the name in your ~/.dbt/profiles.yml
+profile: 'dbt_stridez'
 
 model-paths: ["models"]
-seed-paths: ["data"]
-macro-paths: ["macros"]
-snapshot-paths: ["snapshots"]
-test-paths: ["tests"]
 
-# How models are built per folder
 models:
   dbt_stridez:
     staging:
       +schema: staging
       +materialized: view
+
     marts:
       +schema: mart
       +materialized: table

@@ -1,0 +1,20 @@
+version: 2
+
+models:
+  - name: fct_sales
+    description: "Aggregated sales metrics by campaign, region, and date."
+    columns:
+      - name: campaign_id
+        description: "Ad campaign associated with the sale."
+        tests:
+          - not_null
+      - name: region
+        description: "Region where the order was placed."
+      - name: order_date
+        description: "Date of the order."
+      - name: total_revenue
+        description: "Total revenue for the campaign/region/date."
+      - name: order_count
+        description: "Number of unique orders."
+      - name: total_quantity
+        description: "Number of units sold."
