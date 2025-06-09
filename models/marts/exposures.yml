@@ -1,0 +1,38 @@
+version: 2
+
+exposures:
+  - name: roas_dashboard
+    type: application
+    label: ROAS Dashboard (Streamlit)
+    description: >
+      Streamlit dashboard for analyzing Return on Ad Spend (ROAS), built using the `fct_roas` model.
+    depends_on:
+      - ref('fct_roas')
+    tags: [streamlit, roas, dbt-powered, b2c]
+    owner:
+      name: Vincent Do
+      email: vdo1017@gmail.com
+
+  - name: ads_performance_dashboard
+    type: application
+    label: Ads Performance Dashboard (Streamlit)
+    description: >
+      Dashboard for visualizing ad spend, clicks, impressions, CPC, and CPM metrics using `fct_ad_performance`.
+    depends_on:
+      - ref('fct_ad_performance')
+    tags: [streamlit, ads, dbt-powered, marketing]
+    owner:
+      name: Vincent Do
+      email: vdo1017@gmail.com
+
+  - name: sales_dashboard
+    type: application
+    label: Sales Dashboard (Streamlit)
+    description: >
+      Dashboard for analyzing product-level sales, orders, units sold, and regional performance using `fct_sales`.
+    depends_on:
+      - ref('fct_sales')
+    tags: [streamlit, sales, dbt-powered, ecommerce]
+    owner:
+      name: Vincent Do
+      email: vdo1017@gmail.com

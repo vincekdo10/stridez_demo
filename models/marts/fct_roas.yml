@@ -3,6 +3,7 @@ version: 2
 models:
   - name: fct_roas
     description: "Join of sales and ad spend to calculate Return on Ad Spend (ROAS)."
+    tags: ["roas", "finance", "dbt-powered", "streamlit"]
     columns:
       - name: campaign_id
         description: "The ad campaign ID."
